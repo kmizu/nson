@@ -1,3 +1,5 @@
+package com.github.kmizu.nson
+
 import scala.language.dynamics
 
 object NValue {
@@ -19,6 +21,12 @@ object NValue {
     override def apply(name: String): NValue = content(name)
 
     override def selectDynamic(name: String): NValue = content(name)
+  }
+  object NObject {
+    def apply(): NObject = NObject(Map.empty[String, NValue])
+    def apply(kvs: (String, NValue)*): NObject = {
+      NObject(kvs.toMap)
+    }
   }
 }
 sealed trait NValue extends Dynamic {
