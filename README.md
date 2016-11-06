@@ -1,17 +1,14 @@
 # nson
 
-NSON is a object notation that is not a JSON but alike JSON.
+NSON is a new object notation like JSON and unlike JSON. NSON is strict superset of JSON and differ from JSON in that NSON doesn't 
+require any comma as a separator character.
 
-NSON is a new object notation like JSON and unlike JSON. NSON is strict superset of JSON and differ from JSON in that NObject doesn't require any comma as a separator character.
-
-For example, the following example, including several properties, doesn't have any comma:
+For example, the following example, including several properties of an object, doesn't have any comma:
 
 ```js
 {"name": "Kota Mizushima" "age": 33
   "like" : ["Scala" "Haskell" "Nemerle" "Rust"]}
 ```
-
-This repository provides a parser of NSON.
 
 ## Usage
 
