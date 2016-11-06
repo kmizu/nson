@@ -29,7 +29,9 @@ libraryDependencies ++= Seq(
 
 initialCommands in console += {
   Iterator(
-    "com.github.kmizu.nson._"
+    "com.github.kmizu.nson._",
+    "com.github.kmizu.nson.NValue._",
+    "com.github.kmizu.nson.NValueParser._"
   ).map("import "+).mkString("\n")
 }
 
