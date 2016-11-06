@@ -39,3 +39,65 @@ val nvalue = NValuePaser.parse(
 println(nvalue.x.value) // => 1
 println(nvalue.y.value) // => 2
 ```
+
+## Syntax
+
+### Integer
+
+64-bit signed integer.
+
+```js
+10
+20
+0x10 // 16
+-20  // -20
+```
+
+### Floating Point Number
+
+IEEE 754 double precision floating point number
+
+```js
+1.0
+1.5
+2.0
+3.0
+```
+
+### Boolean
+
+```js
+true
+false
+```
+
+### String
+
+```js
+""
+"Hello, World"
+"Foo"
+"Bar"
+```
+
+### Array
+
+```js
+[]
+[1, 2, 3]
+[1 2 3] //comma is omitted
+[1
+ 2
+ 3] // line feed is also separator
+```
+
+### Object
+
+```js
+{"x" : 1, "y"": 2}
+{"x" : 1 y : 2} //comma is omitted
+{"x" : 1
+ "y" : 2} // line feed is also separator
+{ x : 1, y : 2} // identifier
+{ x : 1  y : 2}
+```
