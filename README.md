@@ -1,4 +1,4 @@
-# nson
+# NSON: an object notation that is not a JSON but alike JSON
 
 [![Gitter](https://badges.gitter.im/kmizu/nson.svg)](https://gitter.im/kmizu/nson?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Build Status](https://travis-ci.org/kmizu/nson.png?branch=master)](https://travis-ci.org/kmizu/nson)
