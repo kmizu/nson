@@ -60,6 +60,11 @@ class NValueParserSpec extends FunSpec with DiagrammedAssertions with GeneratorD
       assert(NArray(Seq(NBoolean(true), NBoolean(false), NBoolean(true), NBoolean(false))) == parse("[true false true false]"))
     }
   }
+  describe("NNull") {
+    it("null") {
+      assert(NNull == parse("null"))
+    }
+  }
   describe("NObject") {
     it("empty") {
       assert(NObject() == parse("{}"))

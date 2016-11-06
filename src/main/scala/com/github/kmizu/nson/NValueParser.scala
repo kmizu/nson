@@ -74,11 +74,14 @@ object NValueParser extends RegexParsers {
   lazy val EQ      : Parser[String] = token("=")
   lazy val EQEQ    : Parser[String] = token("==")
   lazy val COLON   : Parser[String] = token(":")
+  lazy val NULL    : Parser[String] = token("null")
 
   def expression: Parser[NValue] = SPACING ~> nvalue <~ SPACING
 
-  //nvalue::= doubleLiteral | integerLiteral  | stringLiteral | objectLiteral | arrayLiteral | booleanLiteral | ident | "(" expression ")" | "{" lines "}"
-  private lazy val nvalue: Parser[NValue] = doubleLiteral | integerLiteral | stringLiteral | objectLiteral | arrayLiteral | booleanLiteral | ident | CL(LPAREN) ~>expression<~ RPAREN
+  //nvalue::= doubleLiteral | integerLiteral  | stringLiteral | objectLiteral | arrayLiteral | nullLiteral | booleanLiteral | ident | "(" expression ")" | "{" lines "}"
+  private lazy val nvalue: Parser[NValue] = doubleLiteral | integerLiteral | stringLiteral | objectLiteral | arrayLiteral | nullLiteral | booleanLiteral | ident | CL(LPAREN) ~>expression<~ RPAREN
+
+  private lazy val nullLiteral: Parser[NNull.type] = NULL <~ SPACING_WITHOUT_LF ^^ {_ => NNull}
 
   //intLiteral ::= ["1"-"9"] {"0"-"9"}
   private lazy val integerLiteral : Parser[NLong] = (opt("+" | "-") ~
