@@ -22,9 +22,7 @@ For example, the following example, including several properties of an object, d
 Add the following lines to your build.sbt file:
 
 ```scala
-resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
-
-libraryDependencies += "com.github.kmizu" %% "nson" % "0.0.2-SNAPSHOT"
+libraryDependencies += "com.github.kmizu" %% "nson" % "0.0.2"
 ```
 
 Then, you can use NValueParser as the followings:
