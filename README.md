@@ -94,6 +94,7 @@ false
 ```js
 {"x" : 1, "y": 2}
 { x : 1 y : 2} //comma is omitted
+{"x"1"y"2} // colon is omitted
 {"x" : 1
  "y" : 2} // line feed is also separator
 { x : 1, y : 2} // identifier

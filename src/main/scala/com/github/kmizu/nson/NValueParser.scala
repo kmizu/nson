@@ -126,7 +126,7 @@ object NValueParser extends RegexParsers {
     case contents => NArray(contents)
   }) <~ SPACING_WITHOUT_LF
 
-  private lazy val objectLiteral: Parser[NObject] =  ((CL(LBRACE) ~> (repsep(CL((stringLiteral | ident) ~ COLON ~ expression), SEPARATOR) <~ opt(SEPARATOR)) <~ RBRACE) ^^ {
+  private lazy val objectLiteral: Parser[NObject] =  ((CL(LBRACE) ~> (repsep(CL((stringLiteral | ident) ~ opt(COLON) ~ expression), SEPARATOR) <~ opt(SEPARATOR)) <~ RBRACE) ^^ {
     case contents => NObject(contents.map { case k ~ _ ~ v  => k.value -> v}.toMap)
   }) <~ SPACING_WITHOUT_LF
 

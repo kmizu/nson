@@ -75,6 +75,7 @@ class NValueParserSpec extends FunSpec with DiagrammedAssertions with GeneratorD
     }
     it("two properties") {
       assert(NObject("name" -> NString("Kota Mizushima"), "age" -> NLong(33)) == parse("{name: \"Kota Mizushima\" age: 33}"))
+      assert(NObject("x" -> NLong(1), "y" -> NLong(2)) == parse("{x:1y:2}"))
     }
     it("complex") {
       assert(
@@ -102,5 +103,8 @@ class NValueParserSpec extends FunSpec with DiagrammedAssertions with GeneratorD
       assert(33 == result.age.value)
       assert(Seq("Scala", "Nemerle") == result.like.value)
     }
+  }
+  describe("NObject without colon") {
+    assert(NObject("name" -> NString("Kota Mizushima"), "age" -> NLong(33)) == parse("{name\"Kota Mizushima\"age:33}"))
   }
 }
