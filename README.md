@@ -22,7 +22,7 @@ For example, the following example, including several properties of an object, d
 Add the following lines to your build.sbt file:
 
 ```scala
-libraryDependencies += "com.github.kmizu" %% "nson" % "0.0.1"
+libraryDependencies += "com.github.kmizu" %% "nson" % "0.0.2"
 ```
 
 Then, you can use NValueParser as the followings:
