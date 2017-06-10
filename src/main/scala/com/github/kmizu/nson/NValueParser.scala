@@ -57,10 +57,6 @@ object NValueParser extends RegexParsers {
     new String(builder)
   }
 
-  lazy val PLUS    : Parser[String] = token("+")
-  lazy val MINUS   : Parser[String] = token("-")
-  lazy val ASTER   : Parser[String] = token("*")
-  lazy val SLASH   : Parser[String] = token("/")
   lazy val LPAREN  : Parser[String] = token("(")
   lazy val RPAREN  : Parser[String] = token(")")
   lazy val LBRACE  : Parser[String] = token("{")
@@ -70,9 +66,6 @@ object NValueParser extends RegexParsers {
   lazy val TRUE    : Parser[String] = token("true")
   lazy val FALSE   : Parser[String] = token("false")
   lazy val COMMA   : Parser[String] = token(",")
-  lazy val DOT     : Parser[String] = token(".")
-  lazy val EQ      : Parser[String] = token("=")
-  lazy val EQEQ    : Parser[String] = token("==")
   lazy val COLON   : Parser[String] = token(":")
   lazy val NULL    : Parser[String] = token("null")
 
