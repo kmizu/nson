@@ -2,7 +2,7 @@ organization := "com.github.kmizu"
 
 name := "nson"
 
-scalaVersion := "2.12.0"
+scalaVersion := "2.12.10"
 
 crossScalaVersions := Seq("2.11.8", "2.12.0")
 
